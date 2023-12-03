@@ -6,7 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.newsappmvvm.Article
+import com.example.newsappmvvm.models.Article
 
 @Dao
 interface ArticalDao {
