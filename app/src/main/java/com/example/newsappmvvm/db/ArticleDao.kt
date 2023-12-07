@@ -9,7 +9,8 @@ import androidx.room.Query
 import com.example.newsappmvvm.models.Article
 
 @Dao
-interface ArticalDao {
+interface ArticleDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(article: Article): Long
 

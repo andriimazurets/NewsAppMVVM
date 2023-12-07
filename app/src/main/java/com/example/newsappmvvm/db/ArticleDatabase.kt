@@ -13,7 +13,8 @@ import com.example.newsappmvvm.models.Article
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase : RoomDatabase() {
-    abstract fun getArticleDao(): ArticalDao
+
+    abstract fun getArticleDao(): ArticleDao
 
     companion object {
         @Volatile
@@ -21,9 +22,7 @@ abstract class ArticleDatabase : RoomDatabase() {
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: createDatabase(context).also {
-                instance = it
-            }
+            instance ?: createDatabase(context).also { instance = it }
         }
 
         private fun createDatabase(context: Context) =
